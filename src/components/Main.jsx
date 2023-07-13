@@ -2,13 +2,16 @@ import { View } from "react-native";
 import FlightsList from './FlightsList'
 import AppBar from "./AppBar";
 import StyledText from "./StyledText";
+import { Route, Routes } from "react-router-native"
 
 const Main = () => {
     return (
         <View style={{  flex: 1 }} >
             <AppBar/>
-            <StyledText style={{ marginBottom: 20, margin: 10, fontSize: 30 }} > {'> '}Vuelos pendientes</StyledText>
-            <FlightsList/>
+            <Routes>
+                <Route path='/' element={<FlightsList/>} />
+                <Route path="/signin" element={<StyledText>Working on it</StyledText>} />
+            </Routes>
         </View>
     )
 }
