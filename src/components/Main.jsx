@@ -3,6 +3,7 @@ import FlightsList from './FlightsList'
 import AppBar from "./AppBar";
 import StyledText from "./StyledText";
 import { Route, Routes } from "react-router-native"
+import LogIn from "./LogIn";
 
 const Main = () => {
     return (
@@ -10,7 +11,7 @@ const Main = () => {
             <AppBar/>
             <Routes>
                 <Route path='/' element={<FlightsList/>} />
-                <Route path="/signin" element={<StyledText>Working on it</StyledText>} />
+                <Route path="/signin" element={<LogIn/>} />
             </Routes>
         </View>
     )

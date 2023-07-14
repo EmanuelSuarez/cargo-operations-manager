@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, Image } from 'react-native'
+import { View, StyleSheet, Image, Platform } from 'react-native'
 import StyledText from './StyledText'
 import FlightStats from './FlightStats'
 
@@ -36,7 +36,11 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   status: {
-    backgroundColor: 'blue',
+    backgroundColor: Platform.select({
+      android: 'blue',
+      ios: 'red',
+      default: 'lightblue'
+    }),
     padding: 5,
     borderRadius: 5,
     alignSelf: 'flex-start',
